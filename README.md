@@ -91,7 +91,7 @@ Insights file: [analysis/business_insights.md](analysis/business_insights.md)
 
 ## Live Dashboard (Vercel)
 
-**https://web-sooty-three-46.vercel.app**
+**https://pakistanecommerce.vercel.app**
 
 6-page interactive BI dashboard (Executive, Sales, Customers, Products & Sellers, Logistics, Returns & Payments) built with Next.js + Recharts. Data is exported from the PostgreSQL `analytics` schema to static JSON for Vercel hosting.
 
