@@ -89,6 +89,19 @@ See [docs/architecture.md](docs/architecture.md) for diagrams and design rationa
 
 Insights file: [analysis/business_insights.md](analysis/business_insights.md)
 
+## Live Dashboard (Vercel)
+
+**https://web-sooty-three-46.vercel.app**
+
+6-page interactive BI dashboard (Executive, Sales, Customers, Products & Sellers, Logistics, Returns & Payments) built with Next.js + Recharts. Data is exported from the PostgreSQL `analytics` schema to static JSON for Vercel hosting.
+
+To refresh dashboard data after re-running the pipeline:
+
+```powershell
+python scripts/export_dashboard_json.py
+cd web && npx vercel deploy --prod
+```
+
 ## How to run
 
 ### Prerequisites
