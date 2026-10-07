@@ -1,0 +1,1079 @@
+{
+  "generated_at": "2026-10-07T08:05:19.096657+00:00",
+  "currency": "PKR",
+  "kpis": {
+    "total_orders": 300000.0,
+    "total_customers": 59807.0,
+    "gross_revenue": 121793639155.27,
+    "net_revenue": 113376438051.32,
+    "aov": 387810.5962001333,
+    "cancellation_rate": 0.07094,
+    "return_rate": 0.1
+  },
+  "monthly": [
+    {
+      "year": 2023,
+      "month": 1,
+      "month_name": "January",
+      "net_revenue": 78836799.61,
+      "gross_revenue": 84842903.57,
+      "orders": 223,
+      "aov": 364394.2301793722,
+      "growth_pct": null
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "month_name": "February",
+      "net_revenue": 223559547.9,
+      "gross_revenue": 240510314.42,
+      "orders": 582,
+      "aov": 393148.911975945,
+      "growth_pct": 183.5725815938
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "month_name": "March",
+      "net_revenue": 478415262.8,
+      "gross_revenue": 515863511.25,
+      "orders": 1227,
+      "aov": 401312.3698533007,
+      "growth_pct": 113.9990294729
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "month_name": "April",
+      "net_revenue": 704437835.11,
+      "gross_revenue": 757474739.05,
+      "orders": 1817,
+      "aov": 398724.3752944414,
+      "growth_pct": 47.2440137021
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "month_name": "May",
+      "net_revenue": 975560671.69,
+      "gross_revenue": 1047076357.4,
+      "orders": 2582,
+      "aov": 387200.6084198296,
+      "growth_pct": 38.4878300209
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "month_name": "June",
+      "net_revenue": 1119070599.53,
+      "gross_revenue": 1204910082.54,
+      "orders": 3008,
+      "aov": 382415.2946343085,
+      "growth_pct": 14.7105077116
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "month_name": "July",
+      "net_revenue": 1530485215.71,
+      "gross_revenue": 1642388155.85,
+      "orders": 3873,
+      "aov": 405733.4337025562,
+      "growth_pct": 36.7639554066
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "month_name": "August",
+      "net_revenue": 1667061603.15,
+      "gross_revenue": 1790319375.42,
+      "orders": 4391,
+      "aov": 389839.4699749487,
+      "growth_pct": 8.923731248
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "month_name": "September",
+      "net_revenue": 1831811080.1,
+      "gross_revenue": 1970739028.84,
+      "orders": 4996,
+      "aov": 376571.3931485188,
+      "growth_pct": 9.8826268111
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "month_name": "October",
+      "net_revenue": 2100407136.4,
+      "gross_revenue": 2253492269.63,
+      "orders": 5749,
+      "aov": 374562.709481649,
+      "growth_pct": 14.6628688525
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "month_name": "November",
+      "net_revenue": 2329665625.68,
+      "gross_revenue": 2508225187.13,
+      "orders": 6113,
+      "aov": 392207.2664567315,
+      "growth_pct": 10.914954787
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "month_name": "December",
+      "net_revenue": 2645138370.72,
+      "gross_revenue": 2827180048.01,
+      "orders": 6951,
+      "aov": 389626.1980520788,
+      "growth_pct": 13.5415461156
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "month_name": "January",
+      "net_revenue": 2905466439.34,
+      "gross_revenue": 3115782750.21,
+      "orders": 7521,
+      "aov": 395717.9999255418,
+      "growth_pct": 9.841756163
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "month_name": "February",
+      "net_revenue": 2915244712.54,
+      "gross_revenue": 3147162158.59,
+      "orders": 7775,
+      "aov": 386018.5570315113,
+      "growth_pct": 0.3365474496
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "month_name": "March",
+      "net_revenue": 3372180462.79,
+      "gross_revenue": 3614802281.84,
+      "orders": 8879,
+      "aov": 389192.9134125464,
+      "growth_pct": 15.6740100851
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "month_name": "April",
+      "net_revenue": 3459235587.12,
+      "gross_revenue": 3735475076.3,
+      "orders": 9184,
+      "aov": 388371.3467029617,
+      "growth_pct": 2.5815677806
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "month_name": "May",
+      "net_revenue": 3659952110.64,
+      "gross_revenue": 3937030856.17,
+      "orders": 9834,
+      "aov": 382355.0273957698,
+      "growth_pct": 5.8023374952
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "month_name": "June",
+      "net_revenue": 3758390564.79,
+      "gross_revenue": 4026366536.64,
+      "orders": 9998,
+      "aov": 385019.2417793559,
+      "growth_pct": 2.6896104423
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "month_name": "July",
+      "net_revenue": 4151052264.27,
+      "gross_revenue": 4461299541.59,
+      "orders": 10940,
+      "aov": 389661.4390383912,
+      "growth_pct": 10.4476023104
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "month_name": "August",
+      "net_revenue": 4283901244.53,
+      "gross_revenue": 4588583950.16,
+      "orders": 11281,
+      "aov": 388593.8222409361,
+      "growth_pct": 3.2003687692
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "month_name": "September",
+      "net_revenue": 4376199260.19,
+      "gross_revenue": 4690065723.9,
+      "orders": 11380,
+      "aov": 394083.5499147627,
+      "growth_pct": 2.1545318249
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "month_name": "October",
+      "net_revenue": 4517680996.29,
+      "gross_revenue": 4849345574.64,
+      "orders": 12017,
+      "aov": 385203.5206108014,
+      "growth_pct": 3.2329820396
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "month_name": "November",
+      "net_revenue": 4532372681.03,
+      "gross_revenue": 4879173808.09,
+      "orders": 12027,
+      "aov": 386526.3279329841,
+      "growth_pct": 0.3252041203
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "month_name": "December",
+      "net_revenue": 4855998220.66,
+      "gross_revenue": 5218900221.12,
+      "orders": 12748,
+      "aov": 391543.2243598996,
+      "growth_pct": 7.1403117618
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "month_name": "January",
+      "net_revenue": 4874785546.2,
+      "gross_revenue": 5234159867.13,
+      "orders": 12911,
+      "aov": 387335.6622562156,
+      "growth_pct": 0.3868890532
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "month_name": "February",
+      "net_revenue": 4506906356.3,
+      "gross_revenue": 4841102422.71,
+      "orders": 11941,
+      "aov": 387267.9433757642,
+      "growth_pct": -7.5465717705
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "month_name": "March",
+      "net_revenue": 4904970578.5,
+      "gross_revenue": 5278130905.69,
+      "orders": 12887,
+      "aov": 390611.0593070536,
+      "growth_pct": 8.8323162438
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "month_name": "April",
+      "net_revenue": 4909794042.62,
+      "gross_revenue": 5269417091.0,
+      "orders": 12896,
+      "aov": 390633.207612438,
+      "growth_pct": 0.0983382885
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "month_name": "May",
+      "net_revenue": 4920524198.12,
+      "gross_revenue": 5281774798.89,
+      "orders": 13118,
+      "aov": 384953.777690959,
+      "growth_pct": 0.2185459391
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "month_name": "June",
+      "net_revenue": 4669889271.05,
+      "gross_revenue": 5025452981.97,
+      "orders": 12375,
+      "aov": 387869.5447991919,
+      "growth_pct": -5.0936631338
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "month_name": "July",
+      "net_revenue": 4567944056.58,
+      "gross_revenue": 4903796870.37,
+      "orders": 12419,
+      "aov": 376808.5362629842,
+      "growth_pct": -2.1830327991
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "month_name": "August",
+      "net_revenue": 4576898260.8,
+      "gross_revenue": 4924390892.98,
+      "orders": 11951,
+      "aov": 393406.1516115806,
+      "growth_pct": 0.1960226331
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "month_name": "September",
+      "net_revenue": 4062627418.53,
+      "gross_revenue": 4353105838.86,
+      "orders": 10717,
+      "aov": 388466.2034058039,
+      "growth_pct": -11.236230586
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "month_name": "October",
+      "net_revenue": 3770837193.76,
+      "gross_revenue": 4048566329.39,
+      "orders": 10106,
+      "aov": 382226.3994814961,
+      "growth_pct": -7.1823033399
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "month_name": "November",
+      "net_revenue": 3167925737.5,
+      "gross_revenue": 3410310623.9,
+      "orders": 8330,
+      "aov": 391060.8575294118,
+      "growth_pct": -15.988795731
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "month_name": "December",
+      "net_revenue": 1971211098.77,
+      "gross_revenue": 2116420080.02,
+      "orders": 5253,
+      "aov": 384820.8507500476,
+      "growth_pct": -37.7759688166
+    }
+  ],
+  "categories": [
+    {
+      "category_name": "Mobile Phones",
+      "revenue": 56756936035.98,
+      "units_sold": 336511.0,
+      "return_rate": 0.0307758637
+    },
+    {
+      "category_name": "Computers & Laptops",
+      "revenue": 29165411804.49,
+      "units_sold": 175077.0,
+      "return_rate": 0.0324818731
+    },
+    {
+      "category_name": "Furniture",
+      "revenue": 11062438720.07,
+      "units_sold": 120247.0,
+      "return_rate": 0.0320650888
+    },
+    {
+      "category_name": "Home Appliances",
+      "revenue": 10655776202.16,
+      "units_sold": 179323.0,
+      "return_rate": 0.0322083378
+    },
+    {
+      "category_name": "Electronics",
+      "revenue": 6777575556.29,
+      "units_sold": 132969.0,
+      "return_rate": 0.0313243015
+    },
+    {
+      "category_name": "Fashion",
+      "revenue": 1825467318.77,
+      "units_sold": 279645.0,
+      "return_rate": 0.0311740832
+    },
+    {
+      "category_name": "Home & Kitchen",
+      "revenue": 1374446938.07,
+      "units_sold": 167839.0,
+      "return_rate": 0.0307580547
+    },
+    {
+      "category_name": "Sports",
+      "revenue": 1124801253.63,
+      "units_sold": 108772.0,
+      "return_rate": 0.0311681499
+    },
+    {
+      "category_name": "Automotive",
+      "revenue": 1082334117.1,
+      "units_sold": 83026.0,
+      "return_rate": 0.0296273581
+    },
+    {
+      "category_name": "Health & Personal Care",
+      "revenue": 491477427.39,
+      "units_sold": 113540.0,
+      "return_rate": 0.0305812287
+    },
+    {
+      "category_name": "Beauty",
+      "revenue": 463425508.47,
+      "units_sold": 144763.0,
+      "return_rate": 0.0305800604
+    },
+    {
+      "category_name": "Accessories",
+      "revenue": 401717270.94,
+      "units_sold": 73527.0,
+      "return_rate": 0.0322337108
+    },
+    {
+      "category_name": "Toys",
+      "revenue": 262438354.48,
+      "units_sold": 64412.0,
+      "return_rate": 0.0331182252
+    },
+    {
+      "category_name": "Grocery",
+      "revenue": 219766643.61,
+      "units_sold": 205560.0,
+      "return_rate": 0.0313072426
+    },
+    {
+      "category_name": "Books",
+      "revenue": 129626003.82,
+      "units_sold": 66936.0,
+      "return_rate": 0.0318948943
+    }
+  ],
+  "provinces": [
+    {
+      "province": "Punjab",
+      "revenue": 62570729487.32,
+      "orders": 154178.0
+    },
+    {
+      "province": "Sindh",
+      "revenue": 41870342614.47,
+      "orders": 102666.0
+    },
+    {
+      "province": "Khyber Pakhtunkhwa",
+      "revenue": 7527071180.52,
+      "orders": 18643.0
+    },
+    {
+      "province": "Islamabad Capital Territory",
+      "revenue": 4112351853.02,
+      "orders": 10297.0
+    },
+    {
+      "province": "Balochistan",
+      "revenue": 3524437892.61,
+      "orders": 8707.0
+    },
+    {
+      "province": "Azad Jammu and Kashmir",
+      "revenue": 1317699158.68,
+      "orders": 3286.0
+    },
+    {
+      "province": "Gilgit-Baltistan",
+      "revenue": 871006968.65,
+      "orders": 2223.0
+    }
+  ],
+  "cities": [
+    {
+      "city": "Karachi",
+      "province": "Sindh",
+      "revenue": 35835299356.5,
+      "orders": 87802,
+      "return_rate": 0.1009088631,
+      "avg_delivery_days": 6.9830177226
+    },
+    {
+      "city": "Lahore",
+      "province": "Punjab",
+      "revenue": 28964463204.2,
+      "orders": 71409,
+      "return_rate": 0.0983909591,
+      "avg_delivery_days": 7.0023142243
+    },
+    {
+      "city": "Faisalabad",
+      "province": "Punjab",
+      "revenue": 7824022104.68,
+      "orders": 19188,
+      "return_rate": 0.0977694392,
+      "avg_delivery_days": 6.996143698
+    },
+    {
+      "city": "Rawalpindi",
+      "province": "Punjab",
+      "revenue": 5678033623.93,
+      "orders": 14042,
+      "return_rate": 0.1021222048,
+      "avg_delivery_days": 7.0211718823
+    },
+    {
+      "city": "Multan",
+      "province": "Punjab",
+      "revenue": 4768836439.25,
+      "orders": 11825,
+      "return_rate": 0.1002114165,
+      "avg_delivery_days": 7.0401146132
+    },
+    {
+      "city": "Gujranwala",
+      "province": "Punjab",
+      "revenue": 4621753147.63,
+      "orders": 11352,
+      "return_rate": 0.1033298097,
+      "avg_delivery_days": 7.0295168915
+    },
+    {
+      "city": "Peshawar",
+      "province": "Khyber Pakhtunkhwa",
+      "revenue": 4357192935.56,
+      "orders": 10822,
+      "return_rate": 0.0985954537,
+      "avg_delivery_days": 7.0218828905
+    },
+    {
+      "city": "Islamabad",
+      "province": "Islamabad Capital Territory",
+      "revenue": 4112351853.02,
+      "orders": 10297,
+      "return_rate": 0.0992522094,
+      "avg_delivery_days": 7.0138034885
+    },
+    {
+      "city": "Hyderabad",
+      "province": "Sindh",
+      "revenue": 3844203357.12,
+      "orders": 9444,
+      "return_rate": 0.1026048285,
+      "avg_delivery_days": 6.9692201518
+    },
+    {
+      "city": "Quetta",
+      "province": "Balochistan",
+      "revenue": 2640555898.18,
+      "orders": 6526,
+      "return_rate": 0.1015936255,
+      "avg_delivery_days": 7.0195304794
+    },
+    {
+      "city": "Sialkot",
+      "province": "Punjab",
+      "revenue": 2384680076.07,
+      "orders": 5803,
+      "return_rate": 0.1014992245,
+      "avg_delivery_days": 6.9637927133
+    },
+    {
+      "city": "Bahawalpur",
+      "province": "Punjab",
+      "revenue": 1834326913.02,
+      "orders": 4527,
+      "return_rate": 0.0914512922,
+      "avg_delivery_days": 6.9901847575
+    },
+    {
+      "city": "Sargodha",
+      "province": "Punjab",
+      "revenue": 1763399290.67,
+      "orders": 4351,
+      "return_rate": 0.1054929901,
+      "avg_delivery_days": 7.0429171669
+    },
+    {
+      "city": "Gujrat",
+      "province": "Punjab",
+      "revenue": 1280291428.09,
+      "orders": 3213,
+      "return_rate": 0.1008403361,
+      "avg_delivery_days": 7.032388664
+    },
+    {
+      "city": "Sheikhupura",
+      "province": "Punjab",
+      "revenue": 1250335573.38,
+      "orders": 3114,
+      "return_rate": 0.1011560694,
+      "avg_delivery_days": 7.0353492334
+    }
+  ],
+  "payments": [
+    {
+      "payment_method": "Cash on Delivery",
+      "transactions": 134994,
+      "success_rate": 0.6989125443,
+      "amount": 52442317939.39
+    },
+    {
+      "payment_method": "Mobile Wallet",
+      "transactions": 59980,
+      "success_rate": 0.8237912638,
+      "amount": 23177910362.31
+    },
+    {
+      "payment_method": "Credit Card",
+      "transactions": 45076,
+      "success_rate": 0.8242967433,
+      "amount": 17379447003.42
+    },
+    {
+      "payment_method": "Debit Card",
+      "transactions": 36002,
+      "success_rate": 0.8237320149,
+      "amount": 13922368420.96
+    },
+    {
+      "payment_method": "Bank Transfer",
+      "transactions": 23948,
+      "success_rate": 0.8239101386,
+      "amount": 9421135133.96
+    }
+  ],
+  "segments": [
+    {
+      "customer_segment": "High Value",
+      "customers": 11962,
+      "spend": 82068708995.68
+    },
+    {
+      "customer_segment": "Inactive",
+      "customers": 47845,
+      "spend": 34274469864.36
+    }
+  ],
+  "rfm": [
+    {
+      "rfm_segment": "At Risk",
+      "customers": 17123
+    },
+    {
+      "rfm_segment": "Needs Attention",
+      "customers": 14435
+    },
+    {
+      "rfm_segment": "Potential Loyalists",
+      "customers": 13527
+    },
+    {
+      "rfm_segment": "Loyal Customers",
+      "customers": 9771
+    },
+    {
+      "rfm_segment": "Lost",
+      "customers": 2957
+    },
+    {
+      "rfm_segment": "Champions",
+      "customers": 1994
+    }
+  ],
+  "top_products": [
+    {
+      "product_name": "Horizon Laptop 54 Core",
+      "category_name": "Computers & Laptops",
+      "revenue": 230407891.2,
+      "units_sold": 540,
+      "return_rate": 0.0555555556
+    },
+    {
+      "product_name": "Horizon Laptop 45 Core",
+      "category_name": "Computers & Laptops",
+      "revenue": 225440471.52,
+      "units_sold": 528,
+      "return_rate": 0.0327102804
+    },
+    {
+      "product_name": "Falcon Smartphone Pro 11",
+      "category_name": "Mobile Phones",
+      "revenue": 221951377.08,
+      "units_sold": 557,
+      "return_rate": 0.0182648402
+    },
+    {
+      "product_name": "Falcon Laptop 49 Core",
+      "category_name": "Computers & Laptops",
+      "revenue": 217708589.56,
+      "units_sold": 539,
+      "return_rate": 0.0229357798
+    },
+    {
+      "product_name": "Nexa Desktop PC 26",
+      "category_name": "Computers & Laptops",
+      "revenue": 216640249.7,
+      "units_sold": 595,
+      "return_rate": 0.0216450216
+    },
+    {
+      "product_name": "Falcon Gaming Laptop 98",
+      "category_name": "Computers & Laptops",
+      "revenue": 215006978.1,
+      "units_sold": 510,
+      "return_rate": 0.0292682927
+    },
+    {
+      "product_name": "Nova Mobile 68G",
+      "category_name": "Mobile Phones",
+      "revenue": 212383318.06,
+      "units_sold": 554,
+      "return_rate": 0.0492610837
+    },
+    {
+      "product_name": "Falcon Notebook Ultra 30",
+      "category_name": "Computers & Laptops",
+      "revenue": 210678329.12,
+      "units_sold": 524,
+      "return_rate": 0.0445544554
+    },
+    {
+      "product_name": "Crescent Desktop PC 33",
+      "category_name": "Computers & Laptops",
+      "revenue": 210582960.82,
+      "units_sold": 509,
+      "return_rate": 0.023923445
+    },
+    {
+      "product_name": "Falcon Laptop 1 Core",
+      "category_name": "Computers & Laptops",
+      "revenue": 208044319.6,
+      "units_sold": 520,
+      "return_rate": 0.0307692308
+    },
+    {
+      "product_name": "Summit Laptop 16 Core",
+      "category_name": "Computers & Laptops",
+      "revenue": 205561531.24,
+      "units_sold": 494,
+      "return_rate": 0.0459183673
+    },
+    {
+      "product_name": "Urban Smartphone Pro 16",
+      "category_name": "Mobile Phones",
+      "revenue": 204414302.16,
+      "units_sold": 522,
+      "return_rate": 0.0141509434
+    },
+    {
+      "product_name": "Atlas Nova 70",
+      "category_name": "Mobile Phones",
+      "revenue": 203423015.02,
+      "units_sold": 526,
+      "return_rate": 0.0408163265
+    },
+    {
+      "product_name": "Urban Ultrabook 71",
+      "category_name": "Computers & Laptops",
+      "revenue": 200855596.25,
+      "units_sold": 485,
+      "return_rate": 0.0376344086
+    },
+    {
+      "product_name": "Nexa Phone X37",
+      "category_name": "Mobile Phones",
+      "revenue": 198654908.97,
+      "units_sold": 499,
+      "return_rate": 0.0355329949
+    }
+  ],
+  "sellers": [
+    {
+      "seller_name": "Value Hub 616",
+      "seller_revenue": 561943877.1,
+      "seller_return_rate": 0.0293674699,
+      "seller_cancellation_rate": 0.0722891566,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Mega Mart 99",
+      "seller_revenue": 558000179.81,
+      "seller_return_rate": 0.0316949931,
+      "seller_cancellation_rate": 0.0744143316,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Al Depot 185",
+      "seller_revenue": 542073500.4,
+      "seller_return_rate": 0.0373177843,
+      "seller_cancellation_rate": 0.0798833819,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Mega Solutions 27",
+      "seller_revenue": 517488705.13,
+      "seller_return_rate": 0.0332022717,
+      "seller_cancellation_rate": 0.0698995194,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Quick Enterprises 499",
+      "seller_revenue": 488959776.86,
+      "seller_return_rate": 0.0282442748,
+      "seller_cancellation_rate": 0.0641221374,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Mega Solutions 856",
+      "seller_revenue": 463941585.35,
+      "seller_return_rate": 0.0296767356,
+      "seller_cancellation_rate": 0.0699523052,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Mega Retail 929",
+      "seller_revenue": 445352395.88,
+      "seller_return_rate": 0.0316921336,
+      "seller_cancellation_rate": 0.0667798529,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Al Mart 409",
+      "seller_revenue": 439035780.67,
+      "seller_return_rate": 0.0283109405,
+      "seller_cancellation_rate": 0.0719769674,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Global Enterprises 515",
+      "seller_revenue": 429968919.24,
+      "seller_return_rate": 0.027695934,
+      "seller_cancellation_rate": 0.0636417207,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Global Mart 339",
+      "seller_revenue": 426776649.18,
+      "seller_return_rate": 0.0334190231,
+      "seller_cancellation_rate": 0.0634104542,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Super Retail 578",
+      "seller_revenue": 426313637.2,
+      "seller_return_rate": 0.0412517781,
+      "seller_cancellation_rate": 0.0744428639,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Quick Outlet 340",
+      "seller_revenue": 426016343.26,
+      "seller_return_rate": 0.0331574981,
+      "seller_cancellation_rate": 0.0670685757,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Mega Outlet 850",
+      "seller_revenue": 420736527.89,
+      "seller_return_rate": 0.0298507463,
+      "seller_cancellation_rate": 0.0746268657,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "City Shop 615",
+      "seller_revenue": 420155982.85,
+      "seller_return_rate": 0.0357142857,
+      "seller_cancellation_rate": 0.0709109731,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Digital Retail 559",
+      "seller_revenue": 398457477.98,
+      "seller_return_rate": 0.0375275938,
+      "seller_cancellation_rate": 0.0706401766,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Al Wholesale 354",
+      "seller_revenue": 390894004.78,
+      "seller_return_rate": 0.0412121212,
+      "seller_cancellation_rate": 0.0606060606,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Global Shop 694",
+      "seller_revenue": 375851377.21,
+      "seller_return_rate": 0.0244313395,
+      "seller_cancellation_rate": 0.0791912384,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Top Shop 323",
+      "seller_revenue": 372644547.88,
+      "seller_return_rate": 0.0293255132,
+      "seller_cancellation_rate": 0.0755131965,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Al Outlet 765",
+      "seller_revenue": 371574888.04,
+      "seller_return_rate": 0.0458404075,
+      "seller_cancellation_rate": 0.0772495756,
+      "seller_tier": "Gold"
+    },
+    {
+      "seller_name": "Digital Outlet 226",
+      "seller_revenue": 369954980.84,
+      "seller_return_rate": 0.0332749562,
+      "seller_cancellation_rate": 0.0647985989,
+      "seller_tier": "Gold"
+    }
+  ],
+  "delivery_cities": [
+    {
+      "city": "Muzaffarabad",
+      "avg_delivery_days": 7.1081081081,
+      "on_time_delivery_rate": 0.2786579683,
+      "orders": 1396
+    },
+    {
+      "city": "Sukkur",
+      "avg_delivery_days": 7.1048182587,
+      "on_time_delivery_rate": 0.270498732,
+      "orders": 3069
+    },
+    {
+      "city": "Larkana",
+      "avg_delivery_days": 7.102663707,
+      "on_time_delivery_rate": 0.268590455,
+      "orders": 2351
+    },
+    {
+      "city": "Wah Cantt",
+      "avg_delivery_days": 7.0970924195,
+      "on_time_delivery_rate": 0.264278297,
+      "orders": 2495
+    },
+    {
+      "city": "Sargodha",
+      "avg_delivery_days": 7.0429171669,
+      "on_time_delivery_rate": 0.2713085234,
+      "orders": 4351
+    },
+    {
+      "city": "Multan",
+      "avg_delivery_days": 7.0401146132,
+      "on_time_delivery_rate": 0.2770553229,
+      "orders": 11825
+    },
+    {
+      "city": "Sheikhupura",
+      "avg_delivery_days": 7.0353492334,
+      "on_time_delivery_rate": 0.2798126065,
+      "orders": 3114
+    },
+    {
+      "city": "Gujrat",
+      "avg_delivery_days": 7.032388664,
+      "on_time_delivery_rate": 0.2769230769,
+      "orders": 3213
+    },
+    {
+      "city": "Gwadar",
+      "avg_delivery_days": 7.0306569343,
+      "on_time_delivery_rate": 0.2744525547,
+      "orders": 883
+    },
+    {
+      "city": "Gujranwala",
+      "avg_delivery_days": 7.0295168915,
+      "on_time_delivery_rate": 0.2760290557,
+      "orders": 11352
+    },
+    {
+      "city": "Peshawar",
+      "avg_delivery_days": 7.0218828905,
+      "on_time_delivery_rate": 0.2732956595,
+      "orders": 10822
+    },
+    {
+      "city": "Rawalpindi",
+      "avg_delivery_days": 7.0211718823,
+      "on_time_delivery_rate": 0.2666914291,
+      "orders": 14042
+    },
+    {
+      "city": "Quetta",
+      "avg_delivery_days": 7.0195304794,
+      "on_time_delivery_rate": 0.2730321562,
+      "orders": 6526
+    },
+    {
+      "city": "Mingora",
+      "avg_delivery_days": 7.0144528562,
+      "on_time_delivery_rate": 0.274604267,
+      "orders": 1875
+    },
+    {
+      "city": "Islamabad",
+      "avg_delivery_days": 7.0138034885,
+      "on_time_delivery_rate": 0.2795833856,
+      "orders": 10297
+    }
+  ],
+  "returns": [
+    {
+      "return_reason": "Wrong Product",
+      "returns": 4408,
+      "refund_amount": 438803502.57
+    },
+    {
+      "return_reason": "Damaged",
+      "returns": 4304,
+      "refund_amount": 423870359.52
+    },
+    {
+      "return_reason": "Other",
+      "returns": 4301,
+      "refund_amount": 399892625.39
+    },
+    {
+      "return_reason": "Late Delivery",
+      "returns": 4295,
+      "refund_amount": 408673680.45
+    },
+    {
+      "return_reason": "Changed Mind",
+      "returns": 4252,
+      "refund_amount": 418707933.34
+    },
+    {
+      "return_reason": "Product Not as Described",
+      "returns": 4226,
+      "refund_amount": 406932293.89
+    },
+    {
+      "return_reason": "Size Issue",
+      "returns": 4214,
+      "refund_amount": 417769263.56
+    }
+  ],
+  "logistics": {
+    "avg_days": 7.0000650544722784,
+    "on_time_rate": 0.27762646589410866,
+    "delayed_orders": 166562.0
+  }
+}
