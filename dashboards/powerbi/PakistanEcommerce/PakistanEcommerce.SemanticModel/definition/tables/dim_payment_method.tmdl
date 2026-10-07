@@ -1,0 +1,21 @@
+table dim_payment_method
+    lineageTag: fb05a457-39d0-44e8-865e-8af8b6d5a479
+
+    column 'payment_method_key'
+        dataType: int64
+        lineageTag: c056dbb2-5184-414e-8f47-de4cc22aae56
+        sourceColumn: payment_method_key
+
+    column 'payment_method'
+        dataType: string
+        lineageTag: 47e29130-d4df-4c2c-8cb7-aee5a6805155
+        sourceColumn: payment_method
+
+    partition dim_payment_method = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_payment_method"]}[Data]
+        in
+            Data

@@ -1,0 +1,91 @@
+table fact_order_items
+    lineageTag: 752b78d4-ccd3-438b-a0ed-e3b919f436a1
+
+    column 'order_item_key'
+        dataType: int64
+        lineageTag: 2c25982d-2977-4afd-ba02-046ad587af52
+        sourceColumn: order_item_key
+
+    column 'order_item_id'
+        dataType: int64
+        lineageTag: 85d3623f-ca8e-4509-abe5-faea691609e2
+        sourceColumn: order_item_id
+
+    column 'order_key'
+        dataType: int64
+        lineageTag: dac351f5-5bc0-4e3c-b0fd-b80ab17f5692
+        sourceColumn: order_key
+
+    column 'product_key'
+        dataType: int64
+        lineageTag: 2ca33d2d-341d-4fc5-9c61-9426692cd6ae
+        sourceColumn: product_key
+
+    column 'seller_key'
+        dataType: int64
+        lineageTag: b4e9426a-8bea-465a-a3e1-881e4009655d
+        sourceColumn: seller_key
+
+    column 'customer_key'
+        dataType: int64
+        lineageTag: 040b7138-a31c-4213-a186-cdb7af60d504
+        sourceColumn: customer_key
+
+    column 'location_key'
+        dataType: int64
+        lineageTag: 1b729246-85c4-457e-af29-6c8f2f95bde2
+        sourceColumn: location_key
+
+    column 'date_key'
+        dataType: int64
+        lineageTag: 387e7ed7-be0f-4624-bbec-f6a71b581822
+        sourceColumn: date_key
+
+    column 'order_status'
+        dataType: string
+        lineageTag: 7eb4ae55-f979-4556-a5a1-5735016e56d6
+        sourceColumn: order_status
+
+    column 'quantity'
+        dataType: int64
+        lineageTag: cef00328-fc43-4b8d-a9ae-e9889f5bd4ba
+        sourceColumn: quantity
+
+    column 'unit_price'
+        dataType: decimal
+        lineageTag: 1e45bcf9-c8bd-4c06-80a0-eb03e7f25edf
+        sourceColumn: unit_price
+
+    column 'discount_amount'
+        dataType: decimal
+        lineageTag: 029d6eeb-5fb2-43da-9012-8a1ce6b804b2
+        sourceColumn: discount_amount
+
+    column 'line_total'
+        dataType: decimal
+        lineageTag: 4d95e0f5-2fd6-4b80-a85c-bf948f789e18
+        sourceColumn: line_total
+
+    column 'gross_revenue'
+        dataType: decimal
+        lineageTag: 93e4fa73-e58a-409e-9666-ac083cb91d92
+        sourceColumn: gross_revenue
+
+    column 'refund_amount'
+        dataType: decimal
+        lineageTag: 0dd707dd-9d3e-4e2b-97b7-5cd538eec47b
+        sourceColumn: refund_amount
+
+    column 'net_revenue'
+        dataType: decimal
+        lineageTag: 57b94283-5e3a-4e3d-a2ac-85d38f1803a8
+        sourceColumn: net_revenue
+
+    partition fact_order_items = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="fact_order_items"]}[Data]
+        in
+            Data

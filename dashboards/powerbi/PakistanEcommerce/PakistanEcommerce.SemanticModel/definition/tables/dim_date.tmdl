@@ -1,0 +1,71 @@
+table dim_date
+    lineageTag: 9e00b569-4419-4734-b985-116496e9898f
+
+    column 'date_key'
+        dataType: int64
+        lineageTag: 009ebb3c-41b5-4e00-9cbd-c7a9fe559198
+        sourceColumn: date_key
+
+    column 'full_date'
+        dataType: dateTime
+        lineageTag: 33d95cbc-ec09-4819-b031-56260b860bdd
+        sourceColumn: full_date
+
+    column 'day'
+        dataType: int64
+        lineageTag: eb5cd79f-c1f7-4484-a55e-60414667eea8
+        sourceColumn: day
+
+    column 'day_name'
+        dataType: string
+        lineageTag: 33cbc921-f5bb-4f4c-8fd3-65a5389e0bb4
+        sourceColumn: day_name
+
+    column 'week'
+        dataType: int64
+        lineageTag: 2e17f60b-6a4b-4a16-8ef3-4780254d25e2
+        sourceColumn: week
+
+    column 'month'
+        dataType: int64
+        lineageTag: 3a577d67-2e7e-4992-9f17-6e35d17e389e
+        sourceColumn: month
+
+    column 'month_name'
+        dataType: string
+        lineageTag: 881a81bd-4dd1-4181-a957-7225d1bf7490
+        sourceColumn: month_name
+
+    column 'quarter'
+        dataType: int64
+        lineageTag: de4ba91b-09da-4b46-9e80-8fd5ddfb3674
+        sourceColumn: quarter
+
+    column 'year'
+        dataType: int64
+        lineageTag: 4faa5db8-4364-4549-bcef-63ce4a60e679
+        sourceColumn: year
+
+    column 'is_weekend'
+        dataType: boolean
+        lineageTag: f0fa5852-46f6-4b74-a4f7-fa42cb990ca7
+        sourceColumn: is_weekend
+
+    column 'month_start'
+        dataType: dateTime
+        lineageTag: 8a4b8106-4198-46fb-90b1-e7ccfe22b2f8
+        sourceColumn: month_start
+
+    column 'month_end'
+        dataType: dateTime
+        lineageTag: c29a11ec-8732-4ef8-837c-07ad2526093b
+        sourceColumn: month_end
+
+    partition dim_date = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_date"]}[Data]
+        in
+            Data

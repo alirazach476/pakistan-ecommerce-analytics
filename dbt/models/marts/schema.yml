@@ -1,0 +1,94 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Grain = one row per order. Measures revenue, discounts, refunds, and status flags."
+    columns:
+      - name: order_key
+        tests: [unique, not_null]
+      - name: customer_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_key
+      - name: date_key
+        tests: [not_null]
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: ['Pending', 'Confirmed', 'Shipped', 'Delivered', 'Cancelled', 'Returned']
+      - name: total_amount
+        tests: [not_null]
+
+  - name: fact_order_items
+    description: "Grain = one row per order item."
+    columns:
+      - name: order_item_key
+        tests: [unique, not_null]
+      - name: product_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_key
+      - name: quantity
+        tests: [not_null]
+
+  - name: fact_payments
+    description: "Grain = one row per payment."
+    columns:
+      - name: payment_key
+        tests: [unique, not_null]
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['Cash on Delivery', 'Credit Card', 'Debit Card', 'Bank Transfer', 'Mobile Wallet']
+
+  - name: fact_shipments
+    description: "Grain = one row per shipment."
+    columns:
+      - name: shipment_key
+        tests: [unique, not_null]
+
+  - name: fact_returns
+    description: "Grain = one row per return."
+    columns:
+      - name: return_key
+        tests: [unique, not_null]
+      - name: return_reason
+        tests:
+          - accepted_values:
+              values:
+                - Damaged
+                - Wrong Product
+                - Changed Mind
+                - Product Not as Described
+                - Size Issue
+                - Late Delivery
+                - Other
+
+  - name: dim_customer
+    columns:
+      - name: customer_key
+        tests: [unique, not_null]
+
+  - name: dim_product
+    columns:
+      - name: product_key
+        tests: [unique, not_null]
+
+  - name: dim_seller
+    columns:
+      - name: seller_key
+        tests: [unique, not_null]
+
+  - name: dim_date
+    columns:
+      - name: date_key
+        tests: [unique, not_null]
+
+  - name: dim_location
+    columns:
+      - name: location_key
+        tests: [unique, not_null]

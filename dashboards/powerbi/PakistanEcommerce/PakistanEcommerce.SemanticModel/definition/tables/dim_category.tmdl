@@ -1,0 +1,31 @@
+table dim_category
+    lineageTag: 27b9906c-8a0a-4c48-b1e1-884bf05e4d98
+
+    column 'category_key'
+        dataType: int64
+        lineageTag: 4345c47c-fc1b-4152-938d-39b66be89885
+        sourceColumn: category_key
+
+    column 'category_id'
+        dataType: int64
+        lineageTag: 1d61ca28-416d-4149-9529-fe48ac20c629
+        sourceColumn: category_id
+
+    column 'category_name'
+        dataType: string
+        lineageTag: 38165765-a13a-4e0c-bf6e-2fa43a24c820
+        sourceColumn: category_name
+
+    column 'parent_category'
+        dataType: string
+        lineageTag: dad01690-81a0-4b90-875a-23d906e2105b
+        sourceColumn: parent_category
+
+    partition dim_category = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_category"]}[Data]
+        in
+            Data

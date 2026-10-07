@@ -1,0 +1,111 @@
+table fact_orders
+    lineageTag: a303e9a1-b70e-485c-91b2-d012cb445a46
+
+    column 'order_key'
+        dataType: int64
+        lineageTag: 1af3ed07-9817-430b-8094-d13e99b09bb6
+        sourceColumn: order_key
+
+    column 'order_id'
+        dataType: int64
+        lineageTag: 4d156e3d-7ed9-46bb-a834-a42ebe93d936
+        sourceColumn: order_id
+
+    column 'customer_key'
+        dataType: int64
+        lineageTag: d55a2322-c964-4eac-80a5-551f548292f7
+        sourceColumn: customer_key
+
+    column 'location_key'
+        dataType: int64
+        lineageTag: 5dad5bbc-e2a4-41e2-adb3-d9da36cd5929
+        sourceColumn: location_key
+
+    column 'date_key'
+        dataType: int64
+        lineageTag: 4278370d-69f3-4f18-852c-ab58e061bf98
+        sourceColumn: date_key
+
+    column 'order_status_key'
+        dataType: int64
+        lineageTag: 63e67073-4b6b-4148-84ab-5f95369d7159
+        sourceColumn: order_status_key
+
+    column 'order_status'
+        dataType: string
+        lineageTag: cb470d17-36a1-4921-8bd0-df9b3cb534c3
+        sourceColumn: order_status
+
+    column 'order_date'
+        dataType: string
+        lineageTag: 89710ee1-4892-4214-b21d-6ec5a7ea59d5
+        sourceColumn: order_date
+
+    column 'shipping_fee'
+        dataType: decimal
+        lineageTag: e5236374-5f52-4fdb-817a-dcdf465a1c25
+        sourceColumn: shipping_fee
+
+    column 'discount_amount'
+        dataType: decimal
+        lineageTag: e4589c17-d4b6-4706-9772-a1fc3928de3d
+        sourceColumn: discount_amount
+
+    column 'total_amount'
+        dataType: decimal
+        lineageTag: 0ec89834-1cff-4709-b43e-c141ba7c1276
+        sourceColumn: total_amount
+
+    column 'item_count'
+        dataType: int64
+        lineageTag: 1c648372-fe0f-4f3b-841f-1ddc7fab53fe
+        sourceColumn: item_count
+
+    column 'total_units'
+        dataType: int64
+        lineageTag: 4f04146a-24b1-4775-8d76-0dc760ce387f
+        sourceColumn: total_units
+
+    column 'gross_revenue'
+        dataType: decimal
+        lineageTag: 4959f6a7-5a4a-45d5-a3b4-59dc06d24bfd
+        sourceColumn: gross_revenue
+
+    column 'refund_amount'
+        dataType: decimal
+        lineageTag: b2fcb32a-c045-44b2-a543-5360f96c9051
+        sourceColumn: refund_amount
+
+    column 'net_revenue'
+        dataType: decimal
+        lineageTag: 96914e04-2f4b-44ef-bf29-e67bc32db72c
+        sourceColumn: net_revenue
+
+    column 'is_completed'
+        dataType: int64
+        lineageTag: dbac4d01-2ecc-4ee0-b019-44dcdd93d7c3
+        sourceColumn: is_completed
+
+    column 'is_cancelled'
+        dataType: int64
+        lineageTag: f8a7c13e-f632-4319-bbec-bc329eb6fa90
+        sourceColumn: is_cancelled
+
+    column 'is_returned'
+        dataType: int64
+        lineageTag: 37a26b84-8b9d-421a-845c-662901ec0cb3
+        sourceColumn: is_returned
+
+    column 'currency'
+        dataType: string
+        lineageTag: 54c1f4c4-3bb5-4352-bc2f-727f73cc7fde
+        sourceColumn: currency
+
+    partition fact_orders = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="fact_orders"]}[Data]
+        in
+            Data

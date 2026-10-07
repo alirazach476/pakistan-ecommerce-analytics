@@ -1,0 +1,98 @@
+project:
+  name: pakistan-ecommerce-analytics
+  currency: PKR
+  timezone: Asia/Karachi
+  country: Pakistan
+
+schemas:
+  raw: raw
+  staging: staging
+  intermediate: intermediate
+  analytics: analytics
+  ops: ops
+
+tables:
+  raw:
+    - locations
+    - categories
+    - sellers
+    - customers
+    - products
+    - orders
+    - order_items
+    - payments
+    - shipments
+    - returns
+
+order_statuses:
+  - Pending
+  - Confirmed
+  - Shipped
+  - Delivered
+  - Cancelled
+  - Returned
+
+payment_statuses:
+  - Pending
+  - Paid
+  - Failed
+  - Refunded
+
+payment_methods:
+  - Cash on Delivery
+  - Credit Card
+  - Debit Card
+  - Bank Transfer
+  - Mobile Wallet
+
+return_reasons:
+  - Damaged
+  - Wrong Product
+  - Changed Mind
+  - Product Not as Described
+  - Size Issue
+  - Late Delivery
+  - Other
+
+customer_segments:
+  New Customer:
+    description: First order within the last 90 days and total_orders = 1
+  Returning Customer:
+    description: total_orders >= 2 and last order within 180 days
+  High Value:
+    description: Lifetime spend in top 20% of customers
+  At Risk:
+    description: Previously active (2+ orders) but no order in 90-180 days
+  Inactive:
+    description: No order in more than 180 days
+
+rfm_segments:
+  Champions: "R>=4, F>=4, M>=4"
+  Loyal Customers: "R>=3, F>=3, M>=3"
+  Potential Loyalists: "R>=3, F>=1, M>=2"
+  At Risk: "R<=2, F>=3, M>=3"
+  Needs Attention: "R=3, F<=2, M<=2"
+  Lost: "R<=2, F<=2, M<=2"
+
+seller_tiers:
+  Platinum:
+    min_revenue_pkr: 5000000
+    max_return_rate: 0.08
+    max_cancellation_rate: 0.05
+  Gold:
+    min_revenue_pkr: 2000000
+    max_return_rate: 0.12
+    max_cancellation_rate: 0.08
+  Silver:
+    min_revenue_pkr: 500000
+    max_return_rate: 0.18
+    max_cancellation_rate: 0.12
+  Bronze:
+    min_revenue_pkr: 0
+    max_return_rate: 1.0
+    max_cancellation_rate: 1.0
+
+pipeline:
+  batch_size: 10000
+  reject_on_critical_failures: true
+  create_run_log: true

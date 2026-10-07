@@ -1,0 +1,21 @@
+table dim_order_status
+    lineageTag: 937bd32a-b68d-4e31-9f38-911f1cb587f1
+
+    column 'order_status_key'
+        dataType: int64
+        lineageTag: 4a11258c-df55-4466-87c1-45c57fe512e7
+        sourceColumn: order_status_key
+
+    column 'order_status'
+        dataType: string
+        lineageTag: 528d0e71-75f6-4974-b67f-b5f23d312f17
+        sourceColumn: order_status
+
+    partition dim_order_status = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_order_status"]}[Data]
+        in
+            Data

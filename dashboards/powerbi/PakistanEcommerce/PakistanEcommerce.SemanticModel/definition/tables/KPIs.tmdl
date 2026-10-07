@@ -1,0 +1,38 @@
+table KPIs
+    lineageTag: a6faaae1-37fb-41ed-9968-69405fa416f2
+
+    measure 'Total Revenue' = SUM(fact_order_items[gross_revenue])
+        formatString: #,0
+
+    measure 'Net Revenue' = SUM(fact_order_items[net_revenue])
+        formatString: #,0
+
+    measure 'Total Orders' = DISTINCTCOUNT(fact_orders[order_id])
+        formatString: #,0
+
+    measure 'Completed Orders' = CALCULATE(DISTINCTCOUNT(fact_orders[order_id]), fact_orders[order_status] = "Delivered")
+        formatString: #,0
+
+    measure 'Cancelled Orders' = CALCULATE(DISTINCTCOUNT(fact_orders[order_id]), fact_orders[order_status] = "Cancelled")
+        formatString: #,0
+
+    measure 'Returned Orders' = CALCULATE(DISTINCTCOUNT(fact_orders[order_id]), fact_orders[is_returned] = 1)
+        formatString: #,0
+
+    measure 'Total Customers' = DISTINCTCOUNT(fact_orders[customer_key])
+        formatString: #,0
+
+    measure 'AOV' = DIVIDE([Total Revenue], [Total Orders])
+        formatString: #,0.00
+
+    measure 'Return Rate' = DIVIDE([Returned Orders], [Total Orders])
+        formatString: 0.00%
+
+    measure 'Cancellation Rate' = DIVIDE([Cancelled Orders], [Total Orders])
+        formatString: 0.00%
+
+    measure 'Average Delivery Days' = AVERAGE(fact_shipments[total_delivery_days])
+        formatString: #,0.0
+
+    measure 'On-Time Delivery Rate' = DIVIDE(SUM(fact_shipments[on_time_flag]), COUNTROWS(FILTER(fact_shipments, NOT ISBLANK(fact_shipments[on_time_flag]))))
+        formatString: 0.00%

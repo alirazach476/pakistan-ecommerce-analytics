@@ -1,0 +1,158 @@
+x-airflow-common: &airflow-common
+  image: apache/airflow:2.10.3-python3.11
+  environment: &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-analytics}:${POSTGRES_PASSWORD:-change_me_secure_password}@postgres:5432/airflow
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
+    AIRFLOW__WEBSERVER__EXPOSE_CONFIG: 'true'
+    POSTGRES_HOST: postgres
+    POSTGRES_PORT: 5432
+    POSTGRES_DB: ${POSTGRES_DB:-pakistan_ecommerce}
+    POSTGRES_USER: ${POSTGRES_USER:-analytics}
+    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_secure_password}
+    RAW_DATA_DIR: /opt/airflow/data/raw
+    PROCESSED_DATA_DIR: /opt/airflow/data/processed
+    EXPORTS_DIR: /opt/airflow/data/exports
+    LOGS_DIR: /opt/airflow/project_logs
+    PYTHONPATH: /opt/airflow/project
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/plugins:/opt/airflow/plugins
+    - ./src:/opt/airflow/project/src
+    - ./config:/opt/airflow/project/config
+    - ./sql:/opt/airflow/project/sql
+    - ./dbt:/opt/airflow/project/dbt
+    - ./data:/opt/airflow/data
+    - ./logs:/opt/airflow/project_logs
+    - ./requirements.txt:/opt/airflow/project/requirements.txt
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pk_ecommerce_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-analytics}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me_secure_password}
+      POSTGRES_DB: ${POSTGRES_DB:-pakistan_ecommerce}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/ddl/init_schemas.sql:/docker-entrypoint-initdb.d/01_init_schemas.sql
+      - ./sql/ddl/02_init_airflow_db.sh:/docker-entrypoint-initdb.d/02_init_airflow_db.sh
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-analytics} -d ${POSTGRES_DB:-pakistan_ecommerce}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  etl:
+    build: .
+    container_name: pk_ecommerce_etl
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+    volumes:
+      - ./src:/app/src
+      - ./config:/app/config
+      - ./sql:/app/sql
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./dbt:/app/dbt
+    depends_on:
+      postgres:
+        condition: service_healthy
+    profiles:
+      - tools
+    command: ["python", "-m", "src.ingestion.pipeline"]
+
+  dbt:
+    build: .
+    container_name: pk_ecommerce_dbt
+    env_file:
+      - .env
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      DBT_PROFILES_DIR: /app/dbt
+    volumes:
+      - ./dbt:/app/dbt
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+    profiles:
+      - tools
+    working_dir: /app/dbt
+    command: ["dbt", "run", "--profiles-dir", "/app/dbt"]
+
+  airflow-init:
+    <<: *airflow-common
+    container_name: pk_ecommerce_airflow_init
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        mkdir -p /sources/logs /sources/dags /sources/plugins
+        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        airflow db migrate
+        airflow users create \
+          --username ${_AIRFLOW_WWW_USER_USERNAME:-admin} \
+          --password ${_AIRFLOW_WWW_USER_PASSWORD:-admin} \
+          --firstname Admin \
+          --lastname User \
+          --role Admin \
+          --email admin@example.com || true
+        pip install --quiet pandas numpy faker SQLAlchemy psycopg2-binary python-dotenv pydantic pydantic-settings PyYAML tqdm openpyxl dbt-core dbt-postgres tenacity python-dateutil tabulate
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_MIGRATE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-admin}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-admin}
+    user: "0:0"
+    profiles:
+      - airflow
+
+  airflow-webserver:
+    <<: *airflow-common
+    container_name: pk_ecommerce_airflow_web
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    profiles:
+      - airflow
+
+  airflow-scheduler:
+    <<: *airflow-common
+    container_name: pk_ecommerce_airflow_scheduler
+    command: scheduler
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    profiles:
+      - airflow
+
+volumes:
+  postgres_data:

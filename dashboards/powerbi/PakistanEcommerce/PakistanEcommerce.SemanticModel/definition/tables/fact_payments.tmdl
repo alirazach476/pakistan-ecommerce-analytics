@@ -1,0 +1,76 @@
+table fact_payments
+    lineageTag: 1d951706-3659-4ffd-a883-f4d5ddba8246
+
+    column 'payment_key'
+        dataType: int64
+        lineageTag: 4869048e-7914-47aa-a328-84b9a6f68137
+        sourceColumn: payment_key
+
+    column 'payment_id'
+        dataType: int64
+        lineageTag: 7f3c350a-0eb5-434c-ace1-1c7ee534bc37
+        sourceColumn: payment_id
+
+    column 'order_key'
+        dataType: int64
+        lineageTag: 6ff250a0-fbed-485b-9454-fdecaa2d051b
+        sourceColumn: order_key
+
+    column 'payment_method_key'
+        dataType: int64
+        lineageTag: 94b919b9-0701-42aa-9d2e-36e515623280
+        sourceColumn: payment_method_key
+
+    column 'payment_method'
+        dataType: string
+        lineageTag: 893da161-459b-4c20-aa1b-eeb15f44ed84
+        sourceColumn: payment_method
+
+    column 'payment_status'
+        dataType: string
+        lineageTag: e43c653c-2cf9-4911-89dc-ac801c936903
+        sourceColumn: payment_status
+
+    column 'payment_amount'
+        dataType: decimal
+        lineageTag: cdafcfb3-8fd1-45e7-a51a-024825dfa884
+        sourceColumn: payment_amount
+
+    column 'payment_date'
+        dataType: string
+        lineageTag: 40fd3d5b-3b7b-4757-bd14-40d504344042
+        sourceColumn: payment_date
+
+    column 'date_key'
+        dataType: int64
+        lineageTag: 814df1ad-71fe-4a8a-9265-cfafc9237735
+        sourceColumn: date_key
+
+    column 'is_successful'
+        dataType: int64
+        lineageTag: 6bdc754c-5718-41be-bc95-37b797fe22bd
+        sourceColumn: is_successful
+
+    column 'is_failed'
+        dataType: int64
+        lineageTag: 36da8037-389b-4802-ad59-d32f36afb8c0
+        sourceColumn: is_failed
+
+    column 'is_refunded'
+        dataType: int64
+        lineageTag: b30aa9a9-92d0-46b6-ab1e-68aa13f6b740
+        sourceColumn: is_refunded
+
+    column 'transaction_ref'
+        dataType: string
+        lineageTag: 556faa45-4c32-4838-9f03-b5d30d33bb4c
+        sourceColumn: transaction_ref
+
+    partition fact_payments = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="fact_payments"]}[Data]
+        in
+            Data

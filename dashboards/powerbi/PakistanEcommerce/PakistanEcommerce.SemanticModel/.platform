@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Pakistan E-commerce Analytics"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b9896992-0523-41d5-8faa-f6733c4137eb"
+  }
+}

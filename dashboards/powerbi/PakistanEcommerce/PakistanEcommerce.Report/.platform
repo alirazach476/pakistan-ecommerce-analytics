@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Pakistan E-commerce Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "08afd6e5-c09c-4422-8fd6-bc5d220887b8"
+  }
+}

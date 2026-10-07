@@ -1,0 +1,46 @@
+table fct_daily_revenue
+    lineageTag: 9c395d27-98f2-4ebe-a224-8bea374cd1a0
+
+    column 'date_key'
+        dataType: int64
+        lineageTag: a7c1ba31-a085-4688-ad23-97703f41f4fd
+        sourceColumn: date_key
+
+    column 'orders'
+        dataType: int64
+        lineageTag: 489993d6-f9e5-4073-ad71-3d76470b4575
+        sourceColumn: orders
+
+    column 'gross_revenue'
+        dataType: decimal
+        lineageTag: ed33de57-0dc1-4707-a80e-9fb723245c5f
+        sourceColumn: gross_revenue
+
+    column 'discount_amount'
+        dataType: decimal
+        lineageTag: fe98d5af-04d9-4100-b2a0-cc85e677674d
+        sourceColumn: discount_amount
+
+    column 'refund_amount'
+        dataType: decimal
+        lineageTag: 48c75c28-68ab-4e33-b0f7-a8e95a4f72d1
+        sourceColumn: refund_amount
+
+    column 'net_revenue'
+        dataType: decimal
+        lineageTag: ef5c28ed-f39a-4266-931e-0174304a7dcf
+        sourceColumn: net_revenue
+
+    column 'average_order_value'
+        dataType: decimal
+        lineageTag: a33adc42-4a6c-4381-873e-15ec50b2b322
+        sourceColumn: average_order_value
+
+    partition fct_daily_revenue = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="fct_daily_revenue"]}[Data]
+        in
+            Data

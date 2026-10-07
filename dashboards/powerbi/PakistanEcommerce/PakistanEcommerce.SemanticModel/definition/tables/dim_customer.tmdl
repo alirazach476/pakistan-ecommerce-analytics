@@ -1,0 +1,141 @@
+table dim_customer
+    lineageTag: 0b3eca98-d561-44a0-a307-9d1dd9e5e3b6
+
+    column 'customer_key'
+        dataType: int64
+        lineageTag: 446632d9-e102-4a19-ab8f-f1b6e568b9e5
+        sourceColumn: customer_key
+
+    column 'customer_id'
+        dataType: int64
+        lineageTag: d37dd06d-a95e-466a-ac68-136c5df5adde
+        sourceColumn: customer_id
+
+    column 'full_name'
+        dataType: string
+        lineageTag: b08669ce-7b15-4687-9c46-90d47fd09d07
+        sourceColumn: full_name
+
+    column 'email'
+        dataType: string
+        lineageTag: e97bca35-90a0-4411-a729-52dfed076e27
+        sourceColumn: email
+
+    column 'phone'
+        dataType: string
+        lineageTag: 13bb83a3-a955-4436-99d4-02e6240beb04
+        sourceColumn: phone
+
+    column 'gender'
+        dataType: string
+        lineageTag: 4adf12cb-ec0a-47f3-b33d-92d8c63df6c7
+        sourceColumn: gender
+
+    column 'birth_date'
+        dataType: dateTime
+        lineageTag: d9450db9-1e2f-4092-95d0-a25563f6dba6
+        sourceColumn: birth_date
+
+    column 'location_id'
+        dataType: int64
+        lineageTag: 1a711e32-8361-4497-92e9-dc023dd35ba1
+        sourceColumn: location_id
+
+    column 'registration_date'
+        dataType: dateTime
+        lineageTag: 6c1dc85b-fcc7-43ec-96dd-1319972a7809
+        sourceColumn: registration_date
+
+    column 'is_active'
+        dataType: boolean
+        lineageTag: 50e7f4fb-02ee-402f-b418-cd46798c5960
+        sourceColumn: is_active
+
+    column 'total_orders'
+        dataType: int64
+        lineageTag: c45fbfd4-2fad-4f74-96b6-bc3a3641e1e5
+        sourceColumn: total_orders
+
+    column 'total_spend'
+        dataType: decimal
+        lineageTag: 74a95a49-7002-49ec-bac3-36ab0731544c
+        sourceColumn: total_spend
+
+    column 'average_order_value'
+        dataType: decimal
+        lineageTag: 2a63cde4-e99a-4a91-9c47-fdcc493c5f6a
+        sourceColumn: average_order_value
+
+    column 'first_order_date'
+        dataType: dateTime
+        lineageTag: 23221a88-f783-4e6e-baf3-92c13247c31d
+        sourceColumn: first_order_date
+
+    column 'last_order_date'
+        dataType: dateTime
+        lineageTag: 8b88f80a-a11d-44ec-be46-f7a2d55d22de
+        sourceColumn: last_order_date
+
+    column 'days_since_last_order'
+        dataType: int64
+        lineageTag: ad6b3d57-457f-43fc-9dae-c1cc67241c97
+        sourceColumn: days_since_last_order
+
+    column 'total_items'
+        dataType: decimal
+        lineageTag: 4ea31c49-c3dd-4df0-9357-1e67b6894c1c
+        sourceColumn: total_items
+
+    column 'return_count'
+        dataType: decimal
+        lineageTag: 77ef9503-7ac2-4a43-b082-f01c9906beaa
+        sourceColumn: return_count
+
+    column 'cancelled_orders'
+        dataType: int64
+        lineageTag: 2245a667-09b1-4cb3-ad3d-10add0bfed4b
+        sourceColumn: cancelled_orders
+
+    column 'customer_lifetime_value'
+        dataType: decimal
+        lineageTag: 5eb335ce-0136-4745-b631-52a0d1e23ef3
+        sourceColumn: customer_lifetime_value
+
+    column 'customer_segment'
+        dataType: string
+        lineageTag: 1a41a0c9-0184-46ad-bdca-34b024555b3b
+        sourceColumn: customer_segment
+
+    column 'recency_score'
+        dataType: int64
+        lineageTag: fbfe0703-6136-4dad-9976-3b88dedbc367
+        sourceColumn: recency_score
+
+    column 'frequency_score'
+        dataType: int64
+        lineageTag: 21225844-67b9-4c71-a53e-d640180e26a4
+        sourceColumn: frequency_score
+
+    column 'monetary_score'
+        dataType: int64
+        lineageTag: b35df4f3-e59e-442b-baaa-21cb710e172b
+        sourceColumn: monetary_score
+
+    column 'rfm_score'
+        dataType: int64
+        lineageTag: 8f18f16c-30fe-49c7-9cda-eb1f6c94714a
+        sourceColumn: rfm_score
+
+    column 'rfm_segment'
+        dataType: string
+        lineageTag: d1fb133b-f50a-4a11-aa1a-02c4ec500cfa
+        sourceColumn: rfm_segment
+
+    partition dim_customer = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_customer"]}[Data]
+        in
+            Data

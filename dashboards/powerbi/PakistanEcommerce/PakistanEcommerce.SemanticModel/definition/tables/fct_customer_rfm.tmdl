@@ -1,0 +1,71 @@
+table fct_customer_rfm
+    lineageTag: 3d1ff9c6-fe19-4e7b-ab72-bb528ee3dfe2
+
+    column 'customer_key'
+        dataType: int64
+        lineageTag: bfe8826f-f1f3-4be9-96f3-4b8a7423e51a
+        sourceColumn: customer_key
+
+    column 'customer_id'
+        dataType: int64
+        lineageTag: 242c239a-8958-4793-ab5c-b4e899be199e
+        sourceColumn: customer_id
+
+    column 'customer_segment'
+        dataType: string
+        lineageTag: 9db4dab8-f8e8-4a44-a711-f37519a32749
+        sourceColumn: customer_segment
+
+    column 'rfm_segment'
+        dataType: string
+        lineageTag: ac3fde82-0bd0-44a0-8f97-bada6d1b0dc8
+        sourceColumn: rfm_segment
+
+    column 'recency_score'
+        dataType: int64
+        lineageTag: dfbc5192-c141-4dd2-90ba-55586073f0ed
+        sourceColumn: recency_score
+
+    column 'frequency_score'
+        dataType: int64
+        lineageTag: 5fee1803-0018-42de-9688-7375b53c2b69
+        sourceColumn: frequency_score
+
+    column 'monetary_score'
+        dataType: int64
+        lineageTag: f0e4fc0d-d72e-4f2f-8364-611331fc576e
+        sourceColumn: monetary_score
+
+    column 'rfm_score'
+        dataType: int64
+        lineageTag: 9881431d-6bf8-4d3d-bb6d-38a8d2a9710e
+        sourceColumn: rfm_score
+
+    column 'customer_lifetime_value'
+        dataType: decimal
+        lineageTag: 13b3e18a-b50d-4cb1-9e28-c12e6dc8bfac
+        sourceColumn: customer_lifetime_value
+
+    column 'total_orders'
+        dataType: int64
+        lineageTag: 8a1b0903-483c-41b9-9dac-862f2cc06f0c
+        sourceColumn: total_orders
+
+    column 'total_spend'
+        dataType: decimal
+        lineageTag: bd346cdb-8faf-421f-8ff5-5bd90b03f1d1
+        sourceColumn: total_spend
+
+    column 'days_since_last_order'
+        dataType: int64
+        lineageTag: 5e8fc581-b56f-48b5-a778-4bac809713a1
+        sourceColumn: days_since_last_order
+
+    partition fct_customer_rfm = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="fct_customer_rfm"]}[Data]
+        in
+            Data

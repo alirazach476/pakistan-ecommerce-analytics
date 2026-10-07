@@ -1,0 +1,66 @@
+table fact_returns
+    lineageTag: 25ba9f10-ca1e-45f7-8a28-3b77271a7527
+
+    column 'return_key'
+        dataType: int64
+        lineageTag: 66a9c31d-1df2-4c54-b642-371e0120297c
+        sourceColumn: return_key
+
+    column 'return_id'
+        dataType: int64
+        lineageTag: 37d03d52-5e70-43b4-90f1-7c6c52834f53
+        sourceColumn: return_id
+
+    column 'order_key'
+        dataType: int64
+        lineageTag: c9d113a0-4727-4565-8fa7-ea96ec4656f6
+        sourceColumn: order_key
+
+    column 'order_item_key'
+        dataType: int64
+        lineageTag: b20fdf2e-747c-4235-998e-0309c68fcf47
+        sourceColumn: order_item_key
+
+    column 'product_key'
+        dataType: int64
+        lineageTag: 7a794301-533e-452d-b880-31e548116b78
+        sourceColumn: product_key
+
+    column 'seller_key'
+        dataType: int64
+        lineageTag: 9b9e72ce-f615-4370-927d-fda00ce3bbc3
+        sourceColumn: seller_key
+
+    column 'date_key'
+        dataType: int64
+        lineageTag: d96f06d0-d497-49fc-9dbd-f7684d911ba6
+        sourceColumn: date_key
+
+    column 'return_date'
+        dataType: string
+        lineageTag: 96b02c59-be68-4d21-bed7-187ba1cf1c52
+        sourceColumn: return_date
+
+    column 'return_reason'
+        dataType: string
+        lineageTag: f5033750-62f9-458b-8f8b-2e12ec366097
+        sourceColumn: return_reason
+
+    column 'refund_amount'
+        dataType: decimal
+        lineageTag: 16c993f8-13ed-467d-97d4-511145b7580c
+        sourceColumn: refund_amount
+
+    column 'return_status'
+        dataType: string
+        lineageTag: 95a2b246-afed-44e2-b192-86da611d1e17
+        sourceColumn: return_status
+
+    partition fact_returns = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="fact_returns"]}[Data]
+        in
+            Data

@@ -1,0 +1,91 @@
+table dim_product
+    lineageTag: 7a5002e7-0892-43f3-8e87-0bfdb8d2a4bc
+
+    column 'product_key'
+        dataType: int64
+        lineageTag: 22ed154d-8e1f-4ffe-ab35-a33469802d0d
+        sourceColumn: product_key
+
+    column 'product_id'
+        dataType: int64
+        lineageTag: e5886a57-fb89-4984-adc7-3050851835db
+        sourceColumn: product_id
+
+    column 'product_name'
+        dataType: string
+        lineageTag: f578fd76-866a-4865-be8a-9fbd848ddc83
+        sourceColumn: product_name
+
+    column 'category_id'
+        dataType: int64
+        lineageTag: 851226ed-f78f-426c-9456-e0d8667dca0d
+        sourceColumn: category_id
+
+    column 'category_name'
+        dataType: string
+        lineageTag: b11fd679-2501-49a0-bfc3-ac3cf4f3a4eb
+        sourceColumn: category_name
+
+    column 'seller_id'
+        dataType: int64
+        lineageTag: 253765f0-7179-4af1-97c2-1ba7dfe687a4
+        sourceColumn: seller_id
+
+    column 'brand'
+        dataType: string
+        lineageTag: 80978c98-5c47-40d7-b564-2253749af611
+        sourceColumn: brand
+
+    column 'unit_price'
+        dataType: decimal
+        lineageTag: a108eaa9-5e21-417f-917c-8a34a18f06d6
+        sourceColumn: unit_price
+
+    column 'cost_price'
+        dataType: decimal
+        lineageTag: 7069a64c-6ab8-47ee-bcc0-f510720a4eb1
+        sourceColumn: cost_price
+
+    column 'weight_kg'
+        dataType: decimal
+        lineageTag: 21b57618-2445-426d-b625-751c631ddf73
+        sourceColumn: weight_kg
+
+    column 'is_active'
+        dataType: boolean
+        lineageTag: a9a9bcee-5951-4839-93ee-7e4964091398
+        sourceColumn: is_active
+
+    column 'units_sold'
+        dataType: int64
+        lineageTag: da42908b-fa36-4284-b33a-831069cddfef
+        sourceColumn: units_sold
+
+    column 'revenue'
+        dataType: decimal
+        lineageTag: 3775303c-5121-4971-a707-a1622041c850
+        sourceColumn: revenue
+
+    column 'net_revenue'
+        dataType: decimal
+        lineageTag: a7fc22cd-5098-44c4-86bc-d52c619028d5
+        sourceColumn: net_revenue
+
+    column 'return_rate'
+        dataType: decimal
+        lineageTag: 53844300-8338-4a59-9bae-4a5d44fbf14b
+        sourceColumn: return_rate
+
+    column 'cancellation_rate'
+        dataType: decimal
+        lineageTag: 0ca3eddb-fdb0-404e-88a6-8709c9cbc595
+        sourceColumn: cancellation_rate
+
+    partition dim_product = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_product"]}[Data]
+        in
+            Data

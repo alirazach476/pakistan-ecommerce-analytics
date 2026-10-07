@@ -1,0 +1,40 @@
+name: pakistan_ecommerce
+version: 1.0.0
+config-version: 2
+profile: pakistan_ecommerce
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: target
+clean-targets:
+  - target
+  - dbt_packages
+
+models:
+  pakistan_ecommerce:
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: intermediate
+      +materialized: view
+    marts:
+      +schema: analytics
+      +materialized: table
+      core:
+        +materialized: table
+      finance:
+        +materialized: table
+      customer:
+        +materialized: table
+      operations:
+        +materialized: table
+
+vars:
+  currency: PKR
+  on_time_delivery_days: 5

@@ -1,0 +1,76 @@
+table dim_seller
+    lineageTag: eb103283-662f-403c-80ec-7ea2990c68cc
+
+    column 'seller_key'
+        dataType: int64
+        lineageTag: 8f5752b6-81cc-46bd-a088-b474575d3f38
+        sourceColumn: seller_key
+
+    column 'seller_id'
+        dataType: int64
+        lineageTag: f3e87c57-6cab-4f7a-b347-94b4df96acb4
+        sourceColumn: seller_id
+
+    column 'seller_name'
+        dataType: string
+        lineageTag: 2fa467be-42a9-4d72-8f86-73491c7dcd29
+        sourceColumn: seller_name
+
+    column 'business_type'
+        dataType: string
+        lineageTag: 8655d0e6-34f2-47a1-9324-a96f98e93825
+        sourceColumn: business_type
+
+    column 'location_id'
+        dataType: int64
+        lineageTag: abac1536-892b-49a3-8706-45ed3fe3c656
+        sourceColumn: location_id
+
+    column 'registration_date'
+        dataType: dateTime
+        lineageTag: e626dcf8-c1cc-48a4-bcb6-af028a974836
+        sourceColumn: registration_date
+
+    column 'is_active'
+        dataType: boolean
+        lineageTag: 76e2d40e-e848-4983-bcb7-d1e83062e296
+        sourceColumn: is_active
+
+    column 'rating'
+        dataType: decimal
+        lineageTag: 1453c1f2-67e6-40c2-b7fe-c5d91ce41f9c
+        sourceColumn: rating
+
+    column 'seller_revenue'
+        dataType: decimal
+        lineageTag: 16b3e6d5-bfff-47ac-860b-5cf1cd3835db
+        sourceColumn: seller_revenue
+
+    column 'seller_orders'
+        dataType: int64
+        lineageTag: fc866e71-c66f-4a8d-9ddf-9e81211a132f
+        sourceColumn: seller_orders
+
+    column 'seller_return_rate'
+        dataType: decimal
+        lineageTag: b3eba471-c918-4fcc-a734-5f321746a91f
+        sourceColumn: seller_return_rate
+
+    column 'seller_cancellation_rate'
+        dataType: decimal
+        lineageTag: decd4606-36c4-4f66-8ed8-9da64a21e862
+        sourceColumn: seller_cancellation_rate
+
+    column 'seller_tier'
+        dataType: string
+        lineageTag: 2895465e-f6b0-42c5-a26c-759cfbee8226
+        sourceColumn: seller_tier
+
+    partition dim_seller = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_seller"]}[Data]
+        in
+            Data

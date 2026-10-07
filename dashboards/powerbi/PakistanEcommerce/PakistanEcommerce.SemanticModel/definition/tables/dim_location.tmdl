@@ -1,0 +1,51 @@
+table dim_location
+    lineageTag: 4a587fd2-48fe-41b3-85b7-c7f2dc52b550
+
+    column 'location_key'
+        dataType: int64
+        lineageTag: e88008b7-63fd-432a-9b76-eea0bf31336c
+        sourceColumn: location_key
+
+    column 'location_id'
+        dataType: int64
+        lineageTag: 63345c5b-6196-448a-a61c-1a8decdb5693
+        sourceColumn: location_id
+
+    column 'city'
+        dataType: string
+        lineageTag: ff66a646-ee45-4f85-b5f0-23b91a8ab59b
+        sourceColumn: city
+
+    column 'province'
+        dataType: string
+        lineageTag: d846540d-ac78-44b7-bccd-1064a0fc9daf
+        sourceColumn: province
+
+    column 'region'
+        dataType: string
+        lineageTag: 1d3f281d-e704-445e-a7c2-23d8df924126
+        sourceColumn: region
+
+    column 'country'
+        dataType: string
+        lineageTag: 1970bde6-00ea-4605-9a66-66f3ad8b5901
+        sourceColumn: country
+
+    column 'latitude'
+        dataType: decimal
+        lineageTag: 7ef492bf-5201-4dd4-8487-807372c64bc0
+        sourceColumn: latitude
+
+    column 'longitude'
+        dataType: decimal
+        lineageTag: 1292abf0-5940-48bf-b1e5-8a528896c0f3
+        sourceColumn: longitude
+
+    partition dim_location = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="dim_location"]}[Data]
+        in
+            Data

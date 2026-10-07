@@ -1,0 +1,91 @@
+table fact_shipments
+    lineageTag: 704ddc7f-83ba-4aa2-aacd-15ad238a510c
+
+    column 'shipment_key'
+        dataType: int64
+        lineageTag: bf6b5a6d-f76f-477b-87b5-75b5530bab7f
+        sourceColumn: shipment_key
+
+    column 'shipment_id'
+        dataType: int64
+        lineageTag: a5da9c0f-30d6-43e1-a384-493033aed874
+        sourceColumn: shipment_id
+
+    column 'order_key'
+        dataType: int64
+        lineageTag: f6ceaf97-0232-4937-9a5b-ab6d54a215d7
+        sourceColumn: order_key
+
+    column 'customer_key'
+        dataType: int64
+        lineageTag: 5e006e27-e076-4ee5-bf4c-ed5f729cc678
+        sourceColumn: customer_key
+
+    column 'location_key'
+        dataType: int64
+        lineageTag: feee79f4-e012-4d73-869f-5de38d36b4bb
+        sourceColumn: location_key
+
+    column 'date_key'
+        dataType: int64
+        lineageTag: 551a5152-9040-456b-8e27-7e8a7e6010ef
+        sourceColumn: date_key
+
+    column 'carrier'
+        dataType: string
+        lineageTag: cd0b997d-31fa-47f8-903a-fb3291edc149
+        sourceColumn: carrier
+
+    column 'shipment_date'
+        dataType: string
+        lineageTag: c9338c1b-d8b4-45dc-817f-76a6f66bcd43
+        sourceColumn: shipment_date
+
+    column 'delivery_date'
+        dataType: string
+        lineageTag: 2a75ed06-f712-4f8b-9248-564e08858e8c
+        sourceColumn: delivery_date
+
+    column 'promised_delivery_date'
+        dataType: dateTime
+        lineageTag: 02cc3976-d5d0-42b1-9762-1c0a724c3ac6
+        sourceColumn: promised_delivery_date
+
+    column 'delivery_status'
+        dataType: string
+        lineageTag: a621f0f5-2f4f-4135-a310-ecadcd3cde31
+        sourceColumn: delivery_status
+
+    column 'order_to_ship_days'
+        dataType: decimal
+        lineageTag: 506dfcf0-9ea1-46c2-a2c2-2bc7d4260701
+        sourceColumn: order_to_ship_days
+
+    column 'ship_to_delivery_days'
+        dataType: decimal
+        lineageTag: 620f6fd1-11e8-448c-becc-864a39dcecef
+        sourceColumn: ship_to_delivery_days
+
+    column 'total_delivery_days'
+        dataType: decimal
+        lineageTag: 76e80903-4fe5-49a2-b176-b9f2132d380f
+        sourceColumn: total_delivery_days
+
+    column 'on_time_flag'
+        dataType: int64
+        lineageTag: d8ef9a46-f1a3-41dc-98e2-5aa65283b969
+        sourceColumn: on_time_flag
+
+    column 'is_delayed'
+        dataType: int64
+        lineageTag: e6daa086-8320-4d52-aae5-0e0cd2de6d86
+        sourceColumn: is_delayed
+
+    partition fact_shipments = m
+        mode: import
+        source =
+            let
+            Source = PostgreSQL.Database("127.0.0.1", "pakistan_ecommerce", [Port=59612]),
+            Data = Source{[Schema="analytics", Item="fact_shipments"]}[Data]
+        in
+            Data
